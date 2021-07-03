@@ -1,0 +1,23 @@
+{
+    "name": "@bgoetz/react-pubsub-component",
+    "description": "Enables pub/sub with React components.",
+    "version": "1.1.0",
+    "author": "Ben Goetz",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bgoetz/react-pubsub-component.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/react": "^17.0.13",
+        "typescript": "^3.8.0"
+    },
+    "dependencies": {
+        "react": "^16.13.0"
+    },
+    "main": "dist/ReactPubSubComponent.js",
+    "types": "dist/ReactPubSubComponent.d.ts",
+    "scripts": {
+        "build": "tsc"
+    }
+}
