@@ -19,7 +19,7 @@ recommended to use a dedicated pub/sub mechanism. However, as of NodeJS v14, Pro
 
 ## Table of Contents
 
- * [Quick Referencee](#quick-reference)  
+ * [Quick Reference](#quick-reference)  
  * [Basic Usage](#basic-usage)  
    * [React Component Lifecycle](#react-component-lifecycle)
    * [Subscriptions](#subscriptions)
