@@ -36,6 +36,10 @@ recommended to use a dedicated pub/sub mechanism. However, as of NodeJS v14, Pro
 
 [Back to Top](#table-of-contents)
 
+Installation:
+
+    npm install --save @bgoetz/react-pubsub-component
+
 Available components:
 
  * ```typescript
