@@ -154,6 +154,7 @@ export abstract class PSComponent<P = {}, S = {}, Triggers extends PubSub.Restri
             async : this.async as unknown as PubSub.Awaitable<Triggers & PubSubTriggers>,
             sub : this.sub as unknown as PubSub.Subscribable<Triggers & PubSubTriggers>,
             unsub : this.unsub as unknown as PubSub.Subscribable<Triggers & PubSubTriggers>,
+            _finalizeTriggers : this.finalizeTriggers.bind(this),
         };
 
         // Register this child with the parent.

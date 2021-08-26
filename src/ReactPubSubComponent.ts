@@ -72,6 +72,14 @@ export namespace PubSub {
 
         /** Allows parents to unsubscribe to triggers. See: {@link PubSubComponent.unsub}. */
         unsub : Subscribable<TT>;
+
+        /**
+         * Allows replace-in-place finalization of the original {@link PubSubComponent}. Automatically called when a
+         * {@link GlobalPubSub} Proxy is forwarding an already registered {@link PubSubComponent}.
+         * 
+         * DO NOT CALL THIS METHOD UNLESS YOU KNOW WHAT YOU'RE DOING
+         */
+        _finalizeTriggers(component : PubSub.PubSubObject<T>) : void;
     }
     /**
      * Remaps the types of all properties that are {@link RestrictTriggerObjects} to be {@link PubSubObject PubSubObjects}.

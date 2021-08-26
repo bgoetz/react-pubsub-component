@@ -61,10 +61,16 @@ export function GlobalPubSub<T extends PubSub.RestrictTriggerObjects<T>>() {
                 // It was registered as a proxy.
                 if (target[property] instanceof PubSubProxy) {
                     (target[property] as PubSubProxy).finalize(value);
-                } else {
+                } else if (target[property] instanceof PSComponent) {
                     // Forward to the new child.
                     // @ts-expect-error This complains that `finalizeTriggers` is private, which we are intentionally avoiding.
                     (target[property] as PSComponent).finalizeTriggers(value);
+                } else if (target[property]._finalizeTriggers !== undefined) {
+                    // The previously registered object is a simplified pubsub object rather than being a reference to an actual
+                    // `PSComponent`, so use the private-like method instead.
+                    (target[property] as PubSub.PubSubObject)._finalizeTriggers(value);
+                } else {
+                    throw new Error(`Unable to finalize object of unknown shape for registered handle '${property}.`);
                 }
             }
 
